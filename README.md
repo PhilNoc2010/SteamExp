@@ -1,0 +1,1 @@
+A full featured app to allow Steam users to explore their libraries in unique ways.
