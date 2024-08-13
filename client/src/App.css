@@ -28,6 +28,24 @@
   color: #61dafb;
 }
 
+.navbar {
+  background-color: black;
+  color: white;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 50px;
+}
+
+.logo {
+  font-size: large;
+}
+
+.section {
+  font-size: medium;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
