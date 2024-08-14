@@ -1,23 +1,30 @@
-const express = require('express')
-const cors = require('cors')
-const app = express()
-const authRoutes = require('./routes/auth')
-const steamRoutes = require('./routes/steam')
+const express = require('express');
+const cors = require('cors');
+const app = express();
+const authRoutes = require('./routes/auth');
+const steamRoutes = require('./routes/steam');
+const path = require('path');
 
-require("dotenv").config()
+// const defaultPage = require('./pages/index.htm')
 
-let dateTime = new Date()
-const startTime = dateTime.getHours() + ":" + dateTime.getMinutes()
+require("dotenv").config();
 
-app.set('port', process.env.port)
-app.set('steamKey', process.env.STEAM_API_KEY)
+let dateTime = new Date();
+const startTime = dateTime.getHours() + ":" + dateTime.getMinutes();
 
-app.use(cors)
+app.set('port', process.env.port);
+app.set('steamKey', process.env.STEAM_API_KEY);
 
-app.use("/auth/", authRoutes)
+// app.use(cors);
 
-app.use("/steam/", steamRoutes)
+app.use("/auth/", authRoutes);
+
+app.use("/steam/", steamRoutes);
+
+app.get("/", (req, res) => {
+    res.send("got to the Home Route");
+});
 
 app.listen(app.get('port'), () => {
-    console.log("Express started on http://localhost:" + app.get('port') + " at " + startTime)
-})
+    console.log("Express started on http://localhost:" + app.get('port') + " at " + startTime);
+});
