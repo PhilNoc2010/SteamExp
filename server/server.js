@@ -15,7 +15,7 @@ const startTime = dateTime.getHours() + ":" + dateTime.getMinutes();
 app.set('port', process.env.port);
 app.set('steamKey', process.env.STEAM_API_KEY);
 
-// app.use(cors);
+app.use(cors());
 
 app.use("/auth/", authRoutes);
 
